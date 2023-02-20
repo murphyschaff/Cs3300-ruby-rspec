@@ -54,7 +54,21 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  answer = false
+  #makes sure that array has at least 2 elements
+  if arr.length > 1
+    #runs through each possible combination of elements and checks their sums
+    for i in 0..arr.length - 1
+      z = i + 1
+      for x in z..arr.length - 1
+        #if a combination works, answer is changed to true
+        if arr[i] + arr[x] == n
+          answer = true
+        end
+      end
+    end
+  end
+  return answer
 end
 
 # Part 2
