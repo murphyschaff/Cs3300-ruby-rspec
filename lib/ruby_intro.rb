@@ -3,7 +3,15 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  answer = 0
+  if arr.length > 0
+    for i in 0..arr.length - 1
+      answer = answer + arr[i]
+    end
+  else
+    answer = 0
+  end
+  return answer
 end
 
 def max_2_sum arr
