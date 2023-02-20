@@ -3,16 +3,22 @@
 require_relative '../lib/ruby_intro'
 
 describe 'Ruby intro part 1' do
+  #this first block are tests for the sum function in part 1
   describe '#sum' do
-
+    #describes the first type of tests, where it checks numbers to be returned correctly
     it 'returns correct sum [1 point]', points: 1 do
+      #makes sure that the return is an integer
       expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
+      #makes sure that these numbers added is 15
       expect(sum([1, 2, 3, 4, 5])).to eq(15)
+      #checks addition with negative numbers
       expect(sum([1, 2, 3, 4, -5])).to eq(5)
+      #checks addition with negative and large numbers
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
     end
-
+    #Another test describes what should happen when nothing is passed to function
     it 'works on the empty array [2 points]', points: 2 do
+      #should not crash program and should return 0
       expect { sum([]) }.not_to raise_error
       expect(sum([])).to be_zero
     end
