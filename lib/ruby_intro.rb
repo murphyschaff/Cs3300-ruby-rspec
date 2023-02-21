@@ -79,7 +79,22 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  
+  answer = true
+  #makes sure that the string has at least one character
+  if s.length > 0
+    s = s.downcase
+    p = s.codepoints
+    #looks at ascii code to make sure the first character is in the alphabet
+    if p[0] < 97 || p[0] > 122
+      answer = false
+    #makes sure first character is not a vowel
+    elsif p[0] == 97 || p[0] == 101 || p[0] == 105 || p[0] == 111 || p[0] == 117
+      answer = false
+    end
+  else
+    answer = false
+  end
+  return answer
 end
 
 def binary_multiple_of_4? s
