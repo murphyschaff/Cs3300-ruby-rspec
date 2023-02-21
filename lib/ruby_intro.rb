@@ -104,5 +104,35 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  #constructor
+  def initialize(isbn, price)
+    if isbn.length == 0
+      raise ArgumentError, "Enter ISBN"
+    end
+    if price <= 0
+      raise ArgumentError, "Invalid Price"
+    end
+    @isbn, @price = isbn, price
+  end
+
+  #setter methods
+  def isbn=(value)
+    @isbn = value
+  end
+  def price=(value)
+    @price = value
+  end
+  #getter methods
+  def isbn
+    @isbn
+  end
+  def price
+    @price
+  end
+
+  #returns properly formatted price
+  def price_as_string
+    sprintf("$%.2f", @price)
+  end
+
 end
