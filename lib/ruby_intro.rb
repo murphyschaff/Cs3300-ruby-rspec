@@ -98,7 +98,32 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  answer = false
+  if s.length > 0
+    #find out if string is binary digits
+    isBinary = true
+    for i in 0..s.length - 1
+      if s[i] != 0 || s[i] != 1 || s[i] != " "
+        isBinary = false
+      end
+    end
+
+    if isBinary
+      #calculate decimal number
+      num = 0
+      for i in 0..s.length - 1
+        if s[i] != " "
+          digit = s[i].to_i
+          num = num + (digit * 2 ** (s.length - 1) - i)
+        end
+      end
+
+      if (num / 4) == 0
+        answer = true
+      end
+    end
+  end
+  return answer
 end
 
 # Part 3
